@@ -23,7 +23,7 @@ class PaymentServiceTest {
         assertThat(payment.getConvertedAmount())
                 .isEqualTo(payment.getExRate().multiply(payment.getForeignCurrencyAmount()));
 
-        //then 원화 환산 금액의 유효시간을 계산해야 함
+        //원화 환산 금액의 유효시간을 계산해야 함
         assertThat(payment.getValidUntil()).isAfter(LocalDateTime.now());
         assertThat(payment.getValidUntil()).isBefore(LocalDateTime.now().plusMinutes(30));
     }
