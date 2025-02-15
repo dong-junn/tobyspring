@@ -11,7 +11,7 @@ public class Order {
     @Id @GeneratedValue
     private Long id;
 
-    @Column(nullable = true)
+    @Column(unique = true)
     private String no; //주문번호
 
     private BigDecimal total;
